@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academy Stack</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"
+      integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ=="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img src="./assets/images/logo.png" width="200px" alt="" />
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div
+          class="collapse navbar-collapse nav-padding-top"
+          id="bs-example-navbar-collapse-1"
+        >
+          <ul class="nav navbar-nav">
+            <li class="active-menu">
+              <a href="#">ABOUT </a>
+            </li>
+            <li><a href="#">FEATURES</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">JOBS</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#" class="signup-btn">SIGN UP</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid page-container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-7 background-img"></div>
+        <!-- <div class="col-md-5 vcenter"> -->
+          <div class="vcenter">
+            <div class="register-box text-center">
+              <h2>Welcome!</h2>
+
+              <p>Please fill the form below to register</p>
+              <form action="" id="registerform"  data-parsley-validate="">
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">@</span>
+                  <input
+                    type="text" required
+                    class="form-control"
+                    placeholder="Username"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1"
+                    ><i class="fa fa-envelope"></i
+                  ></span>
+                  <input
+                    type="email"
+                    class="form-control" data-parsley-trigger="change" required=""
+                    placeholder="Email"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                  <input
+                    type="password" required
+                    class="form-control"
+                    placeholder="Password"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1"
+                    ><i class="fa fa-lock"></i
+                  ></span>
+                  <input
+                    type="password" required
+                    class="form-control"
+                    placeholder="Confirm Password"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+                <div class="row">
+                  <div class="col-md-1">
+                    <input type="checkbox" name="terms" />
+                  </div>
+                  <div class="col-md-11 text-left terms">
+                    <label for="terms">I agree to the terms and conditions</label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary">
+                  SIGN UP
+                </button>
+                <p class="mt-2">Already a member? <a href="#">Log in</a></p>
+              </form>
+            </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $('#registerform').parsley().on('field:validated', function() {
+    var ok = $('.parsley-error').length === 0;
+    // $('.bs-callout-info').toggleClass('hidden', !ok);
+    // $('.bs-callout-warning').toggleClass('hidden', ok);
+  })
+    $(document).ready(function () {
+    //   alert("yee");
+    });
+  </script>
+</html>

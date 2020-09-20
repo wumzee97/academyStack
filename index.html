@@ -325,7 +325,7 @@
         var email = $("#email").val(),
           password = $("#password").val();
         $.ajax({
-          url: "https://staging-api.fundall.io/api/v1/register",
+          url: "http://localhost:4040/api/v1/register",
           type: "POST",
           data: {
             email: email,
@@ -337,8 +337,8 @@
             $("#successpage").animate({ opacity: "show", top: "100" }, 1000);
           },
           error: function (request) {
-            console.log(request.responseJSON.message);
-            $("#alert").html(JSON.stringify(request));
+            console.log(request.responseJSON.error.message);
+            $("#alert").html(request.responseJSON.error.message);
             $("#alert").addClass("alert-warning");
             $("#alert").show();
             $("#register-box").show();

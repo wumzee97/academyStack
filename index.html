@@ -54,7 +54,7 @@
           id="bs-example-navbar-collapse-1"
         >
           <ul class="nav navbar-nav">
-            <li class="active-menu">
+            <li class="">
               <a href="#">ABOUT </a>
             </li>
             <li><a href="#">FEATURES</a></li>
@@ -75,81 +75,295 @@
       <div class="row align-items-center justify-content-center">
         <div class="col-md-7 background-img"></div>
         <!-- <div class="col-md-5 vcenter"> -->
-          <div class="vcenter">
-            <div class="register-box text-center">
-              <h2>Welcome!</h2>
+        <div class="vcenter">
+          <div class="register-box text-center" id="register-box">
+            <h2>Welcome!</h2>
 
+            <form
+              action=""
+              id="registerform"
+              name="registerform"
+              data-parsley-validate=""
+            >
               <p>Please fill the form below to register</p>
-              <form action="" id="registerform"  data-parsley-validate="">
-                <div class="input-group">
-                  <span class="input-group-addon" id="basic-addon1">@</span>
+              <div id="alert" class="alert"></div>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"
+                  ><i class="fa fa-envelope"></i
+                ></span>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  data-parsley-trigger="change"
+                  required=""
+                  placeholder="Email"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">
+                  <i class="fa fa-lock"></i>
+                </span>
+                <input
+                  type="password"
+                  id="password"
+                  data-parsley-minlength="8"
+                  required
+                  class="form-control"
+                  placeholder="Password"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <div class="input-group confirmpassword">
+                <span class="input-group-addon" id="basic-addon1"
+                  ><i class="fa fa-lock"></i
+                ></span>
+                <input
+                  type="password"
+                  id="confirmpassword"
+                  data-parsley-equalto="#password"
+                  required
+                  class="form-control"
+                  placeholder="Confirm Password"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <div class="row terms">
+                <div class="col-md-1">
+                  <input type="checkbox" required name="terms" />
+                </div>
+                <div class="col-md-11 text-left terms">
+                  <label for="terms">I agree to the terms and conditions</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-block move-down btn-primary">
+                SIGN UP
+              </button>
+              <p class="mt-2">
+                Already a member?
+                <a href="javascript:void(0)" id="login">Log in</a>
+              </p>
+            </form>
+
+            <form
+              action=""
+              id="loginform"
+              name="loginform"
+              data-parsley-validate=""
+            >
+              <p>Enter your details to login!</p>
+              <div id="alert2" class="alert"></div>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"
+                  ><i class="fa fa-envelope"></i
+                ></span>
+                <input
+                  type="email"
+                  id="email2"
+                  class="form-control"
+                  data-parsley-trigger="change"
+                  required=""
+                  placeholder="Email"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">
+                  <i class="fa fa-lock"></i>
+                </span>
+                <input
+                  type="password"
+                  id="password2"
+                  data-parsley-minlength="8"
+                  required
+                  class="form-control"
+                  placeholder="Password"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-block move-down btn-primary login-btn"
+              >
+                LOGIN
+              </button>
+              <p class="mt-2">
+                Not a Member?
+                <a href="javascript:void(0)" id="register">Sign Up</a>
+              </p>
+            </form>
+          </div>
+          <div class="register-box text-center" id="user-option">
+            <h2>User Type</h2>
+            <p style="margin-bottom: 50px">Please select as applied to you!</p>
+            <div class="row">
+              <div class="col-md-6">
+                <label class="btn btn-options-default btn-block" id="tutor">
                   <input
-                    type="text" required
-                    class="form-control"
-                    placeholder="Username"
-                    aria-describedby="basic-addon1"
-                  />
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="basic-addon1"
-                    ><i class="fa fa-envelope"></i
-                  ></span>
+                    type="radio"
+                    name="options"
+                    value="Tutor"
+                    id="option1"
+                  />Tutor
+                </label>
+              </div>
+              <div class="col-md-6">
+                <label class="btn btn-options-default btn-block" id="customer">
                   <input
-                    type="email"
-                    class="form-control" data-parsley-trigger="change" required=""
-                    placeholder="Email"
-                    aria-describedby="basic-addon1"
+                    type="radio"
+                    name="options"
+                    value="Customer"
+                    id="option2"
                   />
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="basic-addon1">
-                    <i class="fa fa-lock"></i>
-                  </span>
-                  <input
-                    type="password" required
-                    class="form-control"
-                    placeholder="Password"
-                    aria-describedby="basic-addon1"
-                  />
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon" id="basic-addon1"
-                    ><i class="fa fa-lock"></i
-                  ></span>
-                  <input
-                    type="password" required
-                    class="form-control"
-                    placeholder="Confirm Password"
-                    aria-describedby="basic-addon1"
-                  />
-                </div>
-                <div class="row">
-                  <div class="col-md-1">
-                    <input type="checkbox" name="terms" />
-                  </div>
-                  <div class="col-md-11 text-left terms">
-                    <label for="terms">I agree to the terms and conditions</label>
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-block btn-primary">
-                  SIGN UP
-                </button>
-                <p class="mt-2">Already a member? <a href="#">Log in</a></p>
-              </form>
+                  Customer
+                </label>
+              </div>
             </div>
+            <div id="confirm">
+              <p>You are registering as a <span class="usertype"></span></p>
+              <a href="#" id="proceed" class="btn btn-primary btn-block"
+                >Proceed</a
+              >
+            </div>
+            <div class="clear-fix"></div>
+
+            <a id="back" onclick="javascript:void(0)" href="#">Back</a>
+          </div>
+          <div class="register-box text-center" id="successpage">
+            <h2>Congratulations</h2>
+            <p>
+              You have successfully registered, kindly check your email for next
+              steps!
+            </p>
+          </div>
           <!-- </div> -->
         </div>
       </div>
     </div>
   </body>
   <script>
-    $('#registerform').parsley().on('field:validated', function() {
-    var ok = $('.parsley-error').length === 0;
-    // $('.bs-callout-info').toggleClass('hidden', !ok);
-    // $('.bs-callout-warning').toggleClass('hidden', ok);
-  })
+    $("#user-option").hide();
+    $("#successpage").hide();
+    $("#confirm").hide();
+    $("#alert").hide();
+    $("#loginform").hide();
+    var usertype;
     $(document).ready(function () {
-    //   alert("yee");
+      // Actions to perform when login form is submitted
+      $("#loginform").on("submit", function (e) {
+        e.preventDefault();
+        var form = $(this);
+
+        form.parsley().validate();
+
+        if (form.parsley().isValid()) {
+          $(".login-btn").attr("disabled", "disabled");
+          $(".login-btn").html(
+            '<i class="fa fa-spinner fa-spin"></i>  ...Loading, please wait'
+          );
+          $.ajax({
+            url: "http://localhost:4040/api/v1/login",
+            type: "POST",
+            data: {
+              email: $("#email2").val(),
+              password: $("#password2").val(),
+            },
+            dataType: "json",
+            success: function (data) {
+              window.location.href = ''
+            },
+            error: function (request, error) {
+              $("#alert2").html(JSON.stringify(request).responseJSON);
+            },
+          });
+        }
+      });
+
+      //Actions to take when register form is submitted
+      $("#registerform").on("submit", function (e) {
+        e.preventDefault();
+        var form = $(this);
+
+        form.parsley().validate();
+
+        //If form is valid, transit the second panel into view
+        if (form.parsley().isValid()) {
+          $("#register-box").hide();
+          $("#user-option").animate({ opacity: "show", top: "100" }, 1000);
+        }
+      });
+
+      // Add active class, remove default class, show confirmation
+      $("#tutor").click(function () {
+        $(this).addClass("btn-options-primary");
+        $("#customer").removeClass("btn-options-primary");
+        $(".usertype").html($("#option1").val());
+        $("#confirm").animate({ opacity: "show", top: "100" }, 1000);
+        usertype = $("#option1").val();
+      });
+
+      // Add active class, remove default class, show confirmation
+      $("#customer").click(function () {
+        $(this).addClass("btn-options-primary");
+        $("#tutor").removeClass("btn-options-primary");
+        $(".usertype").html($("#option2").val());
+        $("#confirm").animate({ opacity: "show", top: "100" }, 1000);
+        usertype = $("#option2").val();
+      });
+
+      //When proceed button is clicked, disable the button, show the spinning loader
+      $("#proceed").click(function () {
+        $(this).attr("disabled", "disabled");
+        $(this).html(
+          '<i class="fa fa-spinner fa-spin"></i>  ...Registering, please wait'
+        );
+        $("#back").hide();
+
+        //Ajax call to the register endpoint
+        var email = $("#email").val(),
+          password = $("#password").val();
+        $.ajax({
+          url: "https://staging-api.fundall.io/api/v1/register",
+          type: "POST",
+          data: {
+            email: email,
+            password: password,
+            usertype: usertype,
+          },
+          dataType: "json",
+          success: function (data) {
+            $("#successpage").animate({ opacity: "show", top: "100" }, 1000);
+          },
+          error: function (request) {
+            console.log(request.responseJSON.message);
+            $("#alert").html(JSON.stringify(request));
+            $("#alert").addClass("alert-warning");
+            $("#alert").show();
+            $("#register-box").show();
+            $("#user-option").hide();
+            $("#successpage").hide();
+            $("#confirm").hide();
+            $("#proceed").removeAttr("disabled");
+            $("#proceed").html("Proceed");
+          },
+        });
+      });
+      $("#back").click(function () {
+        $("#user-option").hide();
+        $("#register-box").animate({ opacity: "show", top: "100" }, 1000);
+      });
+
+      $("#login").click(function () {
+        $("#registerform").hide();
+        $("#loginform").show();
+      });
+
+      $("#register").click(function () {
+        $("#loginform").hide();
+        $("#registerform").show();
+      });
     });
   </script>
 </html>
